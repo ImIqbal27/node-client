@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 
 const AddUser = () => {
-  const [user, setUser] = useState({ name: "de-name", email: "de@fault.com" });
+  const [user, setUser] = useState();
   const handleAddUser = (e) => {
     e.preventDefault();
     fetch(`http://localhost:5000/users`, {

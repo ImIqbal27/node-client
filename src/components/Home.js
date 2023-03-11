@@ -1,9 +1,10 @@
 import React, { useState } from "react";
-import { useLoaderData } from "react-router-dom";
+import { Link, useLoaderData } from "react-router-dom";
 
 const Home = () => {
   const users = useLoaderData();
   const [displayUsers, setDisplayUsers] = useState(users);
+
   const handleDelete = (user) => {
     const agree = window.confirm(`Are you sure to delete ${user.name} ?`);
     if (agree) {
@@ -32,8 +33,10 @@ const Home = () => {
             {"#"}
             {user.phone} {"#"}
             {user?.namee}
-            {/* <button onClick={() => handleDelete(user._id)}>X</button> */}
-            <button onClick={() => handleDelete(user)}>X</button>
+            <Link to={`/update/${user._id}`}>
+              <button>Update</button>
+            </Link>
+            <button onClick={() => handleDelete(user)}>Delete</button>
           </p>
         ))}
       </div>
