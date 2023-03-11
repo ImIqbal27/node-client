@@ -5,8 +5,8 @@ const Update = () => {
   const storedUser = useLoaderData();
 
   const [user, setUser] = useState(storedUser); //default  babe  agerta rakha hoise  ar update 'user' ase jeta body te kore patano hoise
-  const handleUpdateUser = (e) => {
-    e.preventDefault();
+  const handleUpdateUser = (event) => {
+    event.preventDefault();
     console.log(user);
     fetch(`http://localhost:5000/users/${user._id}`, {
       method: "PUT",
