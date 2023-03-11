@@ -9,7 +9,7 @@ function App() {
     {
       path: "/",
       element: <Home />,
-      loader: () => fetch(`http://localhost:5000/users`),
+      loader: () => fetch(`https://node-server-taupe.vercel.app/users`),
     },
     {
       path: "/users/add",
@@ -18,7 +18,8 @@ function App() {
     {
       path: "/update/:id",
       element: <Update />,
-      loader: ({ params }) => fetch(`http://localhost:5000/users/${params.id}`),
+      loader: ({ params }) =>
+        fetch(`https://node-server-taupe.vercel.app/users/${params.id}`),
     },
   ]);
   return (

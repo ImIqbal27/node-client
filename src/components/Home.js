@@ -8,7 +8,7 @@ const Home = () => {
   const handleDelete = (user) => {
     const agree = window.confirm(`Are you sure to delete ${user.name} ?`);
     if (agree) {
-      fetch(`http://localhost:5000/users/${user._id}`, {
+      fetch(`https://node-server-taupe.vercel.app/users/${user._id}`, {
         method: "DELETE",
       })
         .then((res) => res.json())

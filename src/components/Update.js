@@ -8,7 +8,7 @@ const Update = () => {
   const handleUpdateUser = (event) => {
     event.preventDefault();
     console.log(user);
-    fetch(`http://localhost:5000/users/${user._id}`, {
+    fetch(`https://node-server-taupe.vercel.app/users/${user._id}`, {
       method: "PUT",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(user),

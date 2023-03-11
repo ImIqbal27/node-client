@@ -4,7 +4,7 @@ const AddUser = () => {
   const [user, setUser] = useState();
   const handleAddUser = (e) => {
     e.preventDefault();
-    fetch(`http://localhost:5000/users`, {
+    fetch(`https://node-server-taupe.vercel.app/users`, {
       method: "POST",
       headers: { "content-type": "application/json" },
       body: JSON.stringify(user),
